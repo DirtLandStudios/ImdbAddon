@@ -1,14 +1,14 @@
 {
 
 	"manifest_version": 2,
-	"name": "weeboaddon",
+	"name": "ImdbAddon",
 	"version": "0.0.1",
   
-	"description": "A browser addon that adds user defined links in MAL",
+	"description": "A browser addon that adds user defined links in Imdb",
   
 	"content_scripts": [
 	  {
-		"matches": ["*://myanimelist.net/anime/*"],
+		"matches": ["*://imdb.com/title/*"],
 		"js": ["src/main.js"]
 	  }
 	],

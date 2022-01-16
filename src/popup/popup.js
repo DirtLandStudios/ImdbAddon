@@ -3,14 +3,14 @@
 browser.tabs.query({currentWindow: true, active: true})
 	.then((tabs) => {
 	// find MAL animeID from URL
-	let animeID = new URL(tabs[0].url).pathname.split("/")[2]
+	let ImdbID = new URL(tabs[0].url).pathname.split("/")[2]
 	//get the link database
 	browser.storage.local.get("JsonUrl")
 		.then( (JsonUrl) => fetch(JsonUrl["JsonUrl"]))
 		.then( (response) => response.json())
 		.then( (database) => {
 	//get the links and inject into Popup
-			let links = database[animeID]
+			let links = database[ImdbID]
 			for (let i in links) {
 				var Hlink = document.createElement("Hlink")
 				Hlink.textContent = i
